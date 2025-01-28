@@ -1,18 +1,7 @@
-export type SchemaType =
-  | "Product"
-  | "Article"
-  | "Organization"
-  | "Person"
-  | "LocalBusiness"
-  | "WebSite"
-  | "WebPage"
-  | "BreadcrumbList"
-  | string;
-
 export interface BaseSchema {
-  "@context": "https://schema.org";
-  "@type": SchemaType;
-  [key: string]: any;
+  "@context"?: "https://schema.org";
+  "@type": string;
+  "@id"?: string;
 }
 
 export interface UseSchemaOptions {
