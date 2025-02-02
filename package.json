@@ -1,6 +1,6 @@
 {
   "name": "next-schema-buddy",
-  "version": "1.0.4",
+  "version": "1.0.3",
   "description": "",
   "scripts": {
     "build": "tsup",
@@ -23,7 +23,24 @@
   "files": [
     "dist"
   ],
-  "keywords": [],
+  "keywords": [
+    "next",
+    "nextjs",
+    "react",
+    "schema",
+    "schema.org",
+    "structured-data",
+    "json-ld",
+    "seo",
+    "semantic",
+    "metadata",
+    "rich-snippets",
+    "microdata",
+    "typescript",
+    "search-engine",
+    "semantic-web",
+    "web-standards"
+  ],
   "author": "",
   "license": "ISC",
   "bugs": {

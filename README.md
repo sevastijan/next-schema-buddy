@@ -10,6 +10,35 @@ A simple and lightweight Schema.org implementation for Next.js applications. Eas
 - 🎯 Server-side rendering ready
 - 📦 Lightweight with zero dependencies
 
+## Supported Schema Types
+
+### Available Now ✨
+
+- 🌐 WebSite Schema
+- 🏢 Organization Schema
+- 📦 Product Schema
+- 🔍 SearchAction Schema (as part of WebSite)
+- 📍 LocalBusiness Schema
+- 📝 Article Schema
+- ⭐ Review Schema
+
+### Coming Soon 🚀
+
+- 📑 BreadcrumbList Schema
+- ❓ FAQ Schema
+- 📽️ Video Schema
+- 🖼️ ImageObject Schema
+- 📅 Event Schema
+- 🍽️ Restaurant Schema
+- 👤 Person Schema
+- 💼 JobPosting Schema
+- 📱 SoftwareApplication Schema
+- 🎬 Movie Schema
+- 📚 Book Schema
+- 🏪 Store Schema
+- 🛍️ Offer Schema (standalone)
+- 📊 AggregateRating Schema (standalone)
+
 ## Installation
 
 ```bash
@@ -149,6 +178,128 @@ For product pages:
       priceCurrency: "USD",
       availability: "InStock",
     },
+  }}
+/>
+```
+
+### LocalBusinessSchema
+
+```tsx
+<LocalBusinessSchema
+  data={{
+    name: "My Local Store",
+    description: "The best local store in town",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "123 Main St",
+      addressLocality: "City",
+      postalCode: "12345",
+      addressCountry: "US",
+    },
+    telephone: "+1-234-567-8900",
+    priceRange: "$$",
+  }}
+/>
+```
+
+### ArticleSchema
+
+```tsx
+<ArticleSchema
+  data={{
+    "@type": "NewsArticle",
+    headline: "Breaking News: Major Scientific Discovery",
+    description: "Scientists have made a groundbreaking discovery...",
+    articleBody: "Full article content goes here...",
+    image: [
+      "https://example.com/article-hero.jpg",
+      "https://example.com/article-thumbnail.jpg",
+    ],
+    author: {
+      "@type": "Person",
+      name: "John Doe",
+      url: "https://example.com/authors/johndoe",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Example News",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://example.com/logo.png",
+      },
+    },
+    datePublished: "2024-02-02T09:00:00+00:00",
+    dateModified: "2024-02-02T12:30:00+00:00",
+    url: "https://example.com/article/breaking-news",
+    mainEntityOfPage: "https://example.com/article/breaking-news",
+    keywords: ["science", "discovery", "research"],
+    articleSection: "Science",
+    isAccessibleForFree: true,
+    speakable: {
+      "@type": "SpeakableSpecification",
+      cssSelector: [".article-headline", ".article-description"],
+    },
+    video: [
+      {
+        "@type": "VideoObject",
+        name: "Interview with Scientists",
+        description: "Watch our exclusive interview...",
+        thumbnailUrl: "https://example.com/video-thumbnail.jpg",
+        uploadDate: "2024-02-02T10:00:00+00:00",
+        duration: "PT5M",
+        embedUrl: "https://example.com/embed/video123",
+      },
+    ],
+  }}
+/>
+```
+
+### ReviewSchema
+
+```tsx
+<ReviewSchema
+  data={{
+    name: "Crazy phone - my review",
+    reviewBody: "Detailed review...",
+    author: {
+      "@type": "Person",
+      name: "John Smith",
+      url: "https://example.com/authors/john-smith",
+    },
+    datePublished: "2024-02-02T10:00:00+00:00",
+    dateModified: "2024-02-02T12:00:00+00:00",
+    reviewRating: {
+      "@type": "Rating",
+      ratingValue: 4.5,
+      bestRating: 5,
+      worstRating: 1,
+    },
+    itemReviewed: {
+      "@type": "Product",
+      name: "SuperPhone 15 Pro",
+      image: "https://example.com/phone-image.jpg",
+      description: "Newest Iphone ",
+      brand: {
+        "@type": "Brand",
+        name: "SuperPhone",
+      },
+      offers: {
+        "@type": "Offer",
+        price: 999.99,
+        priceCurrency: "USD",
+        availability: "InStock",
+      },
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Tech Reviews",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://example.com/logo.png",
+      },
+    },
+    pros: ["Long time work on battery", "Great camera"],
+    cons: ["High price", "No headphone plug"],
   }}
 />
 ```
